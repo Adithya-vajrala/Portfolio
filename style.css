@@ -101,6 +101,11 @@ border-radius:5px;
 cursor:pointer;
 transition:0.3s;
 }
+.project-btn a,
+.contact-btn a{
+    text-decoration: none;
+    color: none;
+}
 
 .contact-btn{
 padding:12px 25px;
