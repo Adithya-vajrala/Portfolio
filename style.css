@@ -111,6 +111,10 @@ transition:0.3s;
     color: white;
     transition: 0.3s;
 }
+.project-btn a:hover{
+    color: white;
+}
+
 
 .contact-btn{
 padding:12px 25px;
