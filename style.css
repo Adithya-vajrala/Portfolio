@@ -104,10 +104,12 @@ transition:0.3s;
 .project-btn a{
     text-decoration: none;
     color: black;
+    transition: 0.3s;
 }
 .contact-btn a{
     text-decoration: none;
     color: white;
+    transition: 0.3s;
 }
 
 .contact-btn{
