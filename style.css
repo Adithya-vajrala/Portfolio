@@ -101,20 +101,6 @@ border-radius:5px;
 cursor:pointer;
 transition:0.3s;
 }
-.project-btn a{
-    text-decoration: none;
-    color: black;
-    transition: 0.3s;
-}
-.contact-btn a{
-    text-decoration: none;
-    color: white;
-    transition: 0.3s;
-}
-.project-btn a:hover{
-    color: white;
-}
-
 
 .contact-btn{
 padding:12px 25px;
