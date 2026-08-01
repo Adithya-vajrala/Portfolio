@@ -14,6 +14,16 @@ export const NAV_LINKS: NavLink[] = [
 /** Section ids derived from the nav links — single source of truth for scroll-spy. */
 export const SECTION_IDS = NAV_LINKS.map((link) => link.path.slice(1))
 
+export const RESUME_URL = '/resume.pdf'
+
+export const HERO_ROTATING_TITLES: string[] = [
+  'Java Full Stack Developer',
+  'Spring Boot Developer',
+  'React Developer',
+  'Microservices Enthusiast',
+  'Problem Solver',
+]
+
 export const CONTACT = {
   email: 'vajrlaaditya@gmail.com',
   phone: '9392723505',
