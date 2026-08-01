@@ -25,3 +25,14 @@ export interface Education {
   school: string
   period: string
 }
+
+export interface SkillCategory {
+  id: string
+  title: string
+  skills: string[]
+}
+
+export interface CurrentFocus {
+  title: string
+  description: string
+}
