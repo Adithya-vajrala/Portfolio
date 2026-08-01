@@ -6,6 +6,40 @@
   --color-ink: #0f172a;
   --color-surface: #1e293b;
   --color-brand: #38bdf8;
+
+  --animate-blob: blob 16s ease-in-out infinite;
+  --animate-particle: particle 14s linear infinite;
+
+  @keyframes blob {
+    0%,
+    100% {
+      transform: translate(0, 0) scale(1);
+    }
+    33% {
+      transform: translate(24px, -36px) scale(1.08);
+    }
+    66% {
+      transform: translate(-18px, 20px) scale(0.94);
+    }
+  }
+
+  @keyframes particle {
+    0% {
+      transform: translateY(0) translateX(0);
+      opacity: 0;
+    }
+    8%,
+    85% {
+      opacity: var(--particle-opacity, 0.25);
+    }
+    50% {
+      transform: translateY(-38vh) translateX(16px);
+    }
+    100% {
+      transform: translateY(-76vh) translateX(-8px);
+      opacity: 0;
+    }
+  }
 }
 
 @layer base {

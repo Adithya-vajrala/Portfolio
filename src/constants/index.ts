@@ -18,10 +18,10 @@ export const RESUME_URL = '/resume.pdf'
 
 export const HERO_ROTATING_TITLES: string[] = [
   'Java Full Stack Developer',
-  'Spring Boot Developer',
-  'React Developer',
-  'Microservices Enthusiast',
-  'Problem Solver',
+  'Building Secure REST APIs',
+  'Designing Microservices',
+  'React + TypeScript',
+  'Spring Security & JWT',
 ]
 
 export const CONTACT = {
