@@ -107,7 +107,7 @@ export default function FeaturedProjectSection() {
   return (
     <section
       id="featured-project"
-      className="relative mx-auto max-w-6xl overflow-x-clip px-6 py-24"
+      className="relative mx-auto max-w-6xl scroll-mt-24 overflow-x-clip px-6 py-24"
     >
       {/* Ambient glow */}
       <div

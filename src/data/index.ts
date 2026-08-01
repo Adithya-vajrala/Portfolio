@@ -1,7 +1,9 @@
+import { PROJECT_LINKS } from '@/constants'
 import type {
   Certification,
   CurrentFocus,
   Education,
+  GalleryProject,
   Internship,
   Project,
   SkillCategory,
@@ -102,6 +104,53 @@ export const PROJECTS: Project[] = [
     description:
       'Designed and developed a responsive personal portfolio website using HTML and CSS with modern UI design and interactive hover effects.',
     tech: ['HTML', 'CSS'],
+  },
+]
+
+export const PROJECTS_GALLERY: GalleryProject[] = [
+  {
+    id: 'skillbridge',
+    title: 'SkillBridge',
+    description:
+      'A microservices platform connecting customers with professionals — JWT-secured services, Eureka discovery, and gateway routing.',
+    anchor: '#featured-project',
+    statusLabel: 'Featured',
+    statusTone: 'brand',
+    categories: ['featured', 'backend', 'fullstack', 'in-progress'],
+    tech: [
+      'Java',
+      'Spring Boot',
+      'Spring Security',
+      'JWT',
+      'Spring Cloud Gateway',
+      'Eureka',
+    ],
+    github: PROJECT_LINKS.skillbridge.github,
+  },
+  {
+    id: 'urbanwear',
+    title: 'UrbanWear',
+    description:
+      'A responsive e-commerce storefront built with React, TypeScript, React Router, and Context API.',
+    anchor: '#urbanwear',
+    statusLabel: 'Completed',
+    statusTone: 'emerald',
+    categories: ['frontend', 'completed'],
+    tech: ['React', 'TypeScript', 'Vite', 'Tailwind CSS', 'React Router'],
+    github: PROJECT_LINKS.urbanwear.github,
+    liveDemo: PROJECT_LINKS.urbanwear.liveDemo,
+  },
+  {
+    id: 'chappal-shop',
+    title: 'Chappal Shop',
+    description:
+      'A management system for a footwear shop — inventory, billing, exchanges, stock, reports, and sales. Under active development.',
+    anchor: '#chappal-shop',
+    statusLabel: 'In Development',
+    statusTone: 'amber',
+    categories: ['fullstack', 'in-progress'],
+    tech: ['Java', 'Spring Boot', 'React', 'MySQL'],
+    github: PROJECT_LINKS.chappalShop.github,
   },
 ]
 

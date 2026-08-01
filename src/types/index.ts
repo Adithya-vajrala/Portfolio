@@ -32,6 +32,29 @@ export interface SkillCategory {
   skills: string[]
 }
 
+export type ProjectCategory =
+  | 'featured'
+  | 'backend'
+  | 'frontend'
+  | 'fullstack'
+  | 'in-progress'
+  | 'completed'
+
+export type ProjectStatusTone = 'brand' | 'emerald' | 'amber'
+
+export interface GalleryProject {
+  id: string
+  title: string
+  description: string
+  anchor: string
+  statusLabel: string
+  statusTone: ProjectStatusTone
+  categories: ProjectCategory[]
+  tech: string[]
+  github: string
+  liveDemo?: string
+}
+
 export interface CurrentFocus {
   title: string
   description: string
