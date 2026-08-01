@@ -6,6 +6,8 @@ import tailwindcss from '@tailwindcss/vite'
 
 // https://vite.dev/config/
 export default defineConfig({
+  // GitHub Pages project site — all assets resolve under /Portfolio/
+  base: '/Portfolio/',
   plugins: [react(), tailwindcss()],
   resolve: {
     alias: {

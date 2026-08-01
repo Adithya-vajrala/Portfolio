@@ -1,23 +1,37 @@
-import AboutSection from '@/components/sections/AboutSection'
-import ChappalShopCaseStudySection from '@/components/sections/ChappalShopCaseStudySection'
-import ContactSection from '@/components/sections/ContactSection'
-import FeaturedProjectSection from '@/components/sections/FeaturedProjectSection'
+import { lazy, Suspense } from 'react'
+
 import HeroSection from '@/components/sections/HeroSection'
-import ProjectsGallerySection from '@/components/sections/ProjectsGallerySection'
-import UrbanWearCaseStudySection from '@/components/sections/UrbanWearCaseStudySection'
-import SkillsSection from '@/components/sections/SkillsSection'
+
+// Below-fold sections are code-split so the initial bundle stays lean.
+const AboutSection = lazy(() => import('@/components/sections/AboutSection'))
+const SkillsSection = lazy(() => import('@/components/sections/SkillsSection'))
+const ProjectsGallerySection = lazy(
+  () => import('@/components/sections/ProjectsGallerySection'),
+)
+const FeaturedProjectSection = lazy(
+  () => import('@/components/sections/FeaturedProjectSection'),
+)
+const UrbanWearCaseStudySection = lazy(
+  () => import('@/components/sections/UrbanWearCaseStudySection'),
+)
+const ChappalShopCaseStudySection = lazy(
+  () => import('@/components/sections/ChappalShopCaseStudySection'),
+)
+const ContactSection = lazy(() => import('@/components/sections/ContactSection'))
 
 export default function HomePage() {
   return (
     <>
       <HeroSection />
-      <AboutSection />
-      <SkillsSection />
-      <ProjectsGallerySection />
-      <FeaturedProjectSection />
-      <UrbanWearCaseStudySection />
-      <ChappalShopCaseStudySection />
-      <ContactSection />
+      <Suspense fallback={null}>
+        <AboutSection />
+        <SkillsSection />
+        <ProjectsGallerySection />
+        <FeaturedProjectSection />
+        <UrbanWearCaseStudySection />
+        <ChappalShopCaseStudySection />
+        <ContactSection />
+      </Suspense>
     </>
   )
 }

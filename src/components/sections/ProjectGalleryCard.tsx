@@ -11,7 +11,8 @@ import {
   FiTool,
 } from 'react-icons/fi'
 
-import type { GalleryProject, ProjectStatusTone } from '@/types'
+import StatusBadge from '@/components/ui/StatusBadge'
+import type { GalleryProject } from '@/types'
 import { cn } from '@/utils'
 
 const PLACEHOLDER_ICONS: Record<string, IconType> = {
@@ -24,12 +25,6 @@ const PLACEHOLDER_GRADIENTS: Record<string, string> = {
   skillbridge: 'from-brand/40 via-sky-500/20 to-transparent',
   urbanwear: 'from-sky-500/40 via-cyan-400/20 to-transparent',
   'chappal-shop': 'from-amber-400/40 via-orange-500/20 to-transparent',
-}
-
-const STATUS_TONES: Record<ProjectStatusTone, string> = {
-  brand: 'border-brand/30 bg-brand/15 text-brand',
-  emerald: 'border-emerald-400/30 bg-emerald-500/15 text-emerald-300',
-  amber: 'border-amber-400/30 bg-amber-500/15 text-amber-300',
 }
 
 const DOT_GRID = {
@@ -135,17 +130,12 @@ const ProjectGalleryCard = forwardRef<HTMLElement, ProjectGalleryCardProps>(
         </div>
 
         {/* Status badge — outside the aria-hidden visual so screen readers hear it */}
-        <span
-          className={cn(
-            'absolute right-3 top-3 inline-flex items-center gap-1.5 rounded-full border px-2.5 py-1 text-xs font-semibold backdrop-blur',
-            STATUS_TONES[project.statusTone],
-          )}
-        >
+        <StatusBadge tone={project.statusTone} className="absolute right-3 top-3">
           {project.statusLabel === 'Featured' && (
             <FiStar size={11} className="fill-current" />
           )}
           {project.statusLabel}
-        </span>
+        </StatusBadge>
       </motion.article>
     )
   },

@@ -14,7 +14,8 @@ export const NAV_LINKS: NavLink[] = [
 /** Section ids derived from the nav links — single source of truth for scroll-spy. */
 export const SECTION_IDS = NAV_LINKS.map((link) => link.path.slice(1))
 
-export const RESUME_URL = '/resume.pdf'
+// Resolves under the GitHub Pages base path (e.g. /Portfolio/resume.pdf)
+export const RESUME_URL = `${import.meta.env.BASE_URL}resume.pdf`
 
 export const HERO_ROTATING_TITLES: string[] = [
   'Java Full Stack Developer',
