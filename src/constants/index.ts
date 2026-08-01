@@ -31,3 +31,17 @@ export const CONTACT = {
   linkedin: 'https://linkedin.com/in/Vajrala-Adithya',
   github: 'https://github.com/Adithya-vajrala',
 } as const
+
+/** Project links — single source of truth for case studies and the gallery. */
+export const PROJECT_LINKS = {
+  skillbridge: {
+    github: CONTACT.github,
+  },
+  urbanwear: {
+    github: CONTACT.github,
+    liveDemo: 'https://urbanwear-store-vert.vercel.app/',
+  },
+  chappalShop: {
+    github: CONTACT.github,
+  },
+} as const
