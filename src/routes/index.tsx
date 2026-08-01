@@ -1,13 +1,10 @@
 import { lazy, Suspense } from 'react'
-import { Route, Routes } from 'react-router'
+import { Navigate, Route, Routes } from 'react-router'
 
 import Loader from '@/components/Loader'
 import MainLayout from '@/layout/MainLayout'
 
 const HomePage = lazy(() => import('@/pages/HomePage'))
-const AboutPage = lazy(() => import('@/pages/AboutPage'))
-const ProjectsPage = lazy(() => import('@/pages/ProjectsPage'))
-const ContactPage = lazy(() => import('@/pages/ContactPage'))
 const NotFoundPage = lazy(() => import('@/pages/NotFoundPage'))
 
 export default function AppRoutes() {
@@ -16,9 +13,14 @@ export default function AppRoutes() {
       <Routes>
         <Route element={<MainLayout />}>
           <Route index element={<HomePage />} />
-          <Route path="about" element={<AboutPage />} />
-          <Route path="projects" element={<ProjectsPage />} />
-          <Route path="contact" element={<ContactPage />} />
+          {/* Legacy deep links redirect to the matching section of the single page */}
+          <Route path="about" element={<Navigate to="/#about" replace />} />
+          <Route path="skills" element={<Navigate to="/#skills" replace />} />
+          <Route
+            path="projects"
+            element={<Navigate to="/#projects" replace />}
+          />
+          <Route path="contact" element={<Navigate to="/#contact" replace />} />
           <Route path="*" element={<NotFoundPage />} />
         </Route>
       </Routes>

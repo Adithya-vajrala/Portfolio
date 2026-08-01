@@ -2,13 +2,14 @@ import { motion } from 'framer-motion'
 
 import { fadeInUp } from '@/animations'
 
-export default function AboutPage() {
+export default function AboutSection() {
   return (
-    <section className="mx-auto max-w-6xl px-6 py-24">
+    <section id="about" className="mx-auto max-w-6xl px-6 py-24">
       <motion.h1
         variants={fadeInUp}
         initial="hidden"
-        animate="visible"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
         className="mb-12 text-4xl font-bold text-brand"
       >
         About Me
@@ -16,7 +17,8 @@ export default function AboutPage() {
       <motion.div
         variants={fadeInUp}
         initial="hidden"
-        animate="visible"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
         className="rounded-xl border border-white/5 bg-surface p-8 transition hover:border-brand"
       >
         <p className="text-lg leading-relaxed text-slate-300">

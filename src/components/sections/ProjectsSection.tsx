@@ -3,13 +3,14 @@ import { motion } from 'framer-motion'
 import { fadeInUp, staggerContainer } from '@/animations'
 import { PROJECTS } from '@/data'
 
-export default function ProjectsPage() {
+export default function ProjectsSection() {
   return (
-    <section className="mx-auto max-w-6xl px-6 py-24">
+    <section id="projects" className="mx-auto max-w-6xl px-6 py-24">
       <motion.h1
         variants={fadeInUp}
         initial="hidden"
-        animate="visible"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
         className="mb-12 text-4xl font-bold text-brand"
       >
         Projects
@@ -17,7 +18,8 @@ export default function ProjectsPage() {
       <motion.div
         variants={staggerContainer}
         initial="hidden"
-        animate="visible"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
         className="grid gap-8 md:grid-cols-2"
       >
         {PROJECTS.map((project) => (

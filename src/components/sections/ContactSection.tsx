@@ -40,13 +40,14 @@ const CONTACT_ITEMS: ContactItem[] = [
   },
 ]
 
-export default function ContactPage() {
+export default function ContactSection() {
   return (
-    <section className="mx-auto max-w-6xl px-6 py-24">
+    <section id="contact" className="mx-auto max-w-6xl px-6 py-24">
       <motion.h1
         variants={fadeInUp}
         initial="hidden"
-        animate="visible"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
         className="mb-12 text-4xl font-bold text-brand"
       >
         Contact
@@ -54,7 +55,8 @@ export default function ContactPage() {
       <motion.ul
         variants={staggerContainer}
         initial="hidden"
-        animate="visible"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
         className="space-y-4"
       >
         {CONTACT_ITEMS.map(({ label, value, href, Icon }) => {
