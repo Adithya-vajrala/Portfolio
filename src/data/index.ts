@@ -112,11 +112,11 @@ export const PROJECTS_GALLERY: GalleryProject[] = [
     id: 'skillbridge',
     title: 'SkillBridge',
     description:
-      'A microservices platform connecting customers with professionals — JWT-secured services, Eureka discovery, and gateway routing.',
+      'A full-stack service marketplace connecting customers with professionals — built with Spring Boot microservices, JWT auth, and a React frontend.',
     anchor: '#featured-project',
-    statusLabel: 'Featured',
-    statusTone: 'brand',
-    categories: ['featured', 'backend', 'fullstack', 'in-progress'],
+    statusLabel: 'Completed',
+    statusTone: 'emerald',
+    categories: ['featured', 'backend', 'fullstack', 'completed'],
     tech: [
       'Java',
       'Spring Boot',
