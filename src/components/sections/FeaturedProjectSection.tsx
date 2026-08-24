@@ -4,13 +4,12 @@ import type { IconType } from 'react-icons'
 import {
   FiAward,
   FiCheckCircle,
-  FiClock,
   FiCpu,
   FiExternalLink,
   FiGithub,
   FiLayers,
-  FiMap,
   FiTarget,
+  FiZap,
 } from 'react-icons/fi'
 
 import { fadeInUp, staggerContainer } from '@/animations'
@@ -28,47 +27,76 @@ const TECH_GROUPS = [
       'Spring Boot',
       'Spring Security',
       'Spring Data JPA',
-      'JWT Authentication',
       'Spring Cloud Gateway',
-      'Eureka Service Discovery',
+      'Eureka',
     ],
   },
-  { label: 'APIs & Data', items: ['REST APIs', 'MySQL'] },
-  { label: 'Tools', items: ['Git', 'Maven'] },
+  {
+    label: 'Frontend',
+    items: ['React', 'TypeScript', 'React Router', 'Axios', 'Vite'],
+  },
+  { label: 'Database', items: ['MySQL', 'Database-per-Service'] },
+  {
+    label: 'Infrastructure',
+    items: ['Docker', 'Docker Compose', 'AWS EC2', 'Vercel'],
+  },
 ]
 
 const SERVICES = [
-  { name: 'Authentication Service', status: 'Working' },
   { name: 'API Gateway', status: 'Working' },
   { name: 'Eureka Server', status: 'Working' },
-  { name: 'Professional Service', status: 'Planned' },
-  { name: 'Booking Service', status: 'Planned' },
-  { name: 'Notification Service', status: 'Planned' },
-  { name: 'AI Service', status: 'Planned' },
+  { name: 'Auth Service', status: 'Working' },
+  { name: 'Customer Service', status: 'Working' },
+  { name: 'Professional Service', status: 'Working' },
+  { name: 'Booking Service', status: 'Working' },
+  { name: 'Payment Service', status: 'Working' },
+  { name: 'Notification Service', status: 'Working' },
 ] as const
 
 const ROLES = ['ADMIN', 'CUSTOMER', 'PROFESSIONAL']
 
-const WORKING_SERVICES = [
-  'Authentication Service',
-  'API Gateway',
-  'Eureka Server',
+const FEATURES = [
+  {
+    title: 'Microservices Architecture',
+    description:
+      'Eight independently deployable services with API Gateway routing and Eureka service discovery.',
+  },
+  {
+    title: 'Secure Authentication',
+    description:
+      'JWT tokens with HMAC-SHA256 signing, BCrypt password hashing, and role-based authorization.',
+  },
+  {
+    title: 'Three Role-Based Experiences',
+    description:
+      'Separate dashboards and access control for Customers, Professionals, and Admins.',
+  },
+  {
+    title: 'Service-Owned Databases',
+    description:
+      'Independent MySQL databases per service domain with Spring Data JPA persistence.',
+  },
+  {
+    title: 'Cross-Service Communication',
+    description:
+      'HTTP-based service calls for identity resolution and automatic profile provisioning.',
+  },
+  {
+    title: 'Production Deployment',
+    description:
+      'React frontend on Vercel, Dockerized Spring Boot services on AWS EC2 with Eureka discovery.',
+  },
 ]
 
-const CHALLENGES = [
-  'JWT authentication implementation',
-  'Spring Security configuration',
-  'API Gateway routing',
-  'Eureka service registration',
-  'Role-based authorization',
-  'Database entity design',
-]
-
-const ROADMAP = [
-  'Professional Service',
-  'Booking Service',
-  'Notification Service',
-  'AI Service',
+const HIGHLIGHTS = [
+  'JWT validation at API Gateway with role extraction',
+  'Spring Security configuration across 7 services',
+  'Eureka service registration and discovery',
+  'Database-per-service architecture with 6 MySQL databases',
+  'Cross-service identity resolution via HTTP clients',
+  'Automatic customer and professional provisioning on registration',
+  'Booking status state machine with transition validation',
+  'CORS configuration for production Vercel frontend',
 ]
 
 interface DetailCardProps {
@@ -142,7 +170,7 @@ export default function FeaturedProjectSection() {
         className="mt-4 text-2xl font-bold sm:text-3xl"
       >
         <span className="bg-gradient-to-r from-brand to-sky-400 bg-clip-text text-transparent">
-          SkillBridge
+          SkillBridge — Full-Stack Service Marketplace
         </span>
       </motion.h3>
       <motion.p
@@ -152,10 +180,10 @@ export default function FeaturedProjectSection() {
         viewport={SECTION_VIEWPORT}
         className="mt-4 max-w-2xl leading-relaxed text-slate-400"
       >
-        A microservices platform that connects customers with professionals. It
-        demonstrates how I approach backend architecture — JWT-secured
-        services, service discovery with Eureka, gateway routing, and clean
-        domain separation across the Spring ecosystem.
+        A full-stack service marketplace connecting customers with professionals,
+        built with Spring Boot microservices on the backend and React on the
+        frontend. Features JWT-secured authentication, role-based access control,
+        service discovery, and production deployment.
       </motion.p>
 
       {/* Buttons */}
@@ -190,13 +218,6 @@ export default function FeaturedProjectSection() {
         >
           <FiLayers size={16} className="text-brand" />
           Architecture
-        </a>
-        <a
-          href="#skillbridge-roadmap"
-          className="group inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-6 py-3 text-sm font-semibold text-white backdrop-blur transition-all duration-300 hover:-translate-y-0.5 hover:border-brand/60 hover:bg-white/10 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand"
-        >
-          <FiMap size={16} className="text-brand" />
-          Future Roadmap
         </a>
       </motion.div>
 
@@ -248,7 +269,7 @@ export default function FeaturedProjectSection() {
             </div>
           </DetailCard>
 
-          <DetailCard Icon={FiLayers} title="Architecture" className="sm:col-span-2">
+          <DetailCard Icon={FiLayers} title="Services" className="sm:col-span-2">
             <ul className="space-y-2">
               {SERVICES.map((service) => (
                 <li
@@ -256,20 +277,9 @@ export default function FeaturedProjectSection() {
                   className="flex items-center justify-between gap-3 rounded-lg border border-white/10 bg-white/5 px-3 py-2 text-sm"
                 >
                   <span className="text-slate-300">{service.name}</span>
-                  <span
-                    className={cn(
-                      'inline-flex shrink-0 items-center gap-1.5 rounded-full px-2.5 py-0.5 text-xs font-semibold',
-                      service.status === 'Working'
-                        ? 'bg-emerald-500/15 text-emerald-300'
-                        : 'bg-amber-500/15 text-amber-300',
-                    )}
-                  >
-                    {service.status === 'Working' ? (
-                      <FiCheckCircle size={11} />
-                    ) : (
-                      <FiClock size={11} />
-                    )}
-                    {service.status}
+                  <span className="inline-flex shrink-0 items-center gap-1.5 rounded-full bg-emerald-500/15 px-2.5 py-0.5 text-xs font-semibold text-emerald-300">
+                    <FiCheckCircle size={11} />
+                    Working
                   </span>
                 </li>
               ))}
@@ -291,69 +301,56 @@ export default function FeaturedProjectSection() {
             </div>
           </DetailCard>
 
-          <DetailCard Icon={FiCheckCircle} title="Current Status">
-            <ul className="space-y-2">
-              {WORKING_SERVICES.map((service) => (
-                <li
-                  key={service}
-                  className="flex items-center gap-2 text-sm text-slate-300"
-                >
-                  <FiCheckCircle size={14} className="shrink-0 text-emerald-400" />
-                  {service}
-                </li>
+          <DetailCard Icon={FiZap} title="Key Features" className="sm:col-span-2">
+            <div className="grid gap-3 sm:grid-cols-2">
+              {FEATURES.map((feature) => (
+                <div key={feature.title} className="rounded-lg border border-white/10 bg-white/5 px-4 py-3">
+                  <h5 className="text-sm font-semibold text-white">{feature.title}</h5>
+                  <p className="mt-1 text-xs leading-relaxed text-slate-400">
+                    {feature.description}
+                  </p>
+                </div>
               ))}
-            </ul>
-            <p className="mt-4 text-sm leading-relaxed text-slate-400">
-              Remaining services are under development.
-            </p>
+            </div>
           </DetailCard>
 
-          <DetailCard Icon={FiTarget} title="Project Goal">
-            <p className="text-sm leading-relaxed text-slate-400">
-              A platform where customers and professionals meet through secure,
-              independently deployable services — with JWT-secured APIs,
-              service discovery, and gateway routing as the foundation.
-            </p>
+          <DetailCard Icon={FiTarget} title="Deployment">
+            <ul className="space-y-2 text-sm text-slate-300">
+              <li className="flex items-start gap-2">
+                <FiCheckCircle size={14} className="mt-0.5 shrink-0 text-emerald-400" />
+                <span>Frontend on <strong className="text-white">Vercel</strong></span>
+              </li>
+              <li className="flex items-start gap-2">
+                <FiCheckCircle size={14} className="mt-0.5 shrink-0 text-emerald-400" />
+                <span>Backend on <strong className="text-white">AWS EC2</strong></span>
+              </li>
+              <li className="flex items-start gap-2">
+                <FiCheckCircle size={14} className="mt-0.5 shrink-0 text-emerald-400" />
+                <span><strong className="text-white">Docker</strong> containerized</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <FiCheckCircle size={14} className="mt-0.5 shrink-0 text-emerald-400" />
+                <span><strong className="text-white">Eureka</strong> service discovery</span>
+              </li>
+            </ul>
           </DetailCard>
 
           <DetailCard
             Icon={FiAward}
-            title="Challenges Solved"
+            title="Technical Highlights"
             className="sm:col-span-2"
           >
             <ul className="grid gap-2 sm:grid-cols-2">
-              {CHALLENGES.map((challenge) => (
+              {HIGHLIGHTS.map((highlight) => (
                 <li
-                  key={challenge}
+                  key={highlight}
                   className="flex items-start gap-2 text-sm text-slate-300"
                 >
                   <FiCheckCircle
                     size={14}
                     className="mt-0.5 shrink-0 text-emerald-400"
                   />
-                  {challenge}
-                </li>
-              ))}
-            </ul>
-          </DetailCard>
-
-          <DetailCard
-            Icon={FiMap}
-            title="Future Roadmap"
-            id="skillbridge-roadmap"
-            className="scroll-mt-24 sm:col-span-2"
-          >
-            <ul className="grid gap-2 sm:grid-cols-2">
-              {ROADMAP.map((service) => (
-                <li
-                  key={service}
-                  className="flex items-center justify-between gap-3 rounded-lg border border-white/10 bg-white/5 px-3 py-2 text-sm"
-                >
-                  <span className="text-slate-300">{service}</span>
-                  <span className="inline-flex shrink-0 items-center gap-1.5 rounded-full bg-amber-500/15 px-2.5 py-0.5 text-xs font-semibold text-amber-300">
-                    <FiClock size={11} />
-                    Planned
-                  </span>
+                  {highlight}
                 </li>
               ))}
             </ul>

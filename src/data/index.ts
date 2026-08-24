@@ -110,9 +110,9 @@ export const PROJECTS: Project[] = [
 export const PROJECTS_GALLERY: GalleryProject[] = [
   {
     id: 'skillbridge',
-    title: 'SkillBridge',
+    title: 'SkillBridge — Full-Stack Service Marketplace',
     description:
-      'A full-stack service marketplace connecting customers with professionals — built with Spring Boot microservices, JWT auth, and a React frontend.',
+      'A full-stack service marketplace connecting customers with professionals, built with Spring Boot microservices and React, featuring JWT-secured authentication, role-based access control, service discovery, and production deployment.',
     anchor: '#featured-project',
     statusLabel: 'Completed',
     statusTone: 'emerald',
@@ -120,10 +120,12 @@ export const PROJECTS_GALLERY: GalleryProject[] = [
     tech: [
       'Java',
       'Spring Boot',
-      'Spring Security',
-      'JWT',
-      'Spring Cloud Gateway',
-      'Eureka',
+      'React',
+      'TypeScript',
+      'MySQL',
+      'Docker',
+      'AWS EC2',
+      'Vercel',
     ],
     github: PROJECT_LINKS.skillbridge.github,
     liveDemo: PROJECT_LINKS.skillbridge.liveDemo,
