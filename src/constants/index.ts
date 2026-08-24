@@ -1,12 +1,28 @@
 import type { NavLink } from '@/types'
 
 export const SITE_NAME = 'Adithya'
+export const LOGO_MONOGRAM = 'VA'
 
 export const NAV_LINKS: NavLink[] = [
-  { label: 'Home', path: '/' },
-  { label: 'About', path: '/about' },
-  { label: 'Projects', path: '/projects' },
-  { label: 'Contact', path: '/contact' },
+  { label: 'Home', path: '#home' },
+  { label: 'About', path: '#about' },
+  { label: 'Skills', path: '#skills' },
+  { label: 'Projects', path: '#projects' },
+  { label: 'Contact', path: '#contact' },
+]
+
+/** Section ids derived from the nav links — single source of truth for scroll-spy. */
+export const SECTION_IDS = NAV_LINKS.map((link) => link.path.slice(1))
+
+// Resolves under the GitHub Pages base path (e.g. /Portfolio/resume.pdf)
+export const RESUME_URL = `${import.meta.env.BASE_URL}resume.pdf`
+
+export const HERO_ROTATING_TITLES: string[] = [
+  'Java Full Stack Developer',
+  'Building Secure REST APIs',
+  'Designing Microservices',
+  'React + TypeScript',
+  'Spring Security & JWT',
 ]
 
 export const CONTACT = {
@@ -15,4 +31,16 @@ export const CONTACT = {
   location: 'Andhra Pradesh, India',
   linkedin: 'https://linkedin.com/in/Vajrala-Adithya',
   github: 'https://github.com/Adithya-vajrala',
+} as const
+
+/** Project links — single source of truth for case studies and the gallery. */
+export const PROJECT_LINKS = {
+  skillbridge: {
+    github: CONTACT.github,
+    liveDemo: 'https://skill-bridge-nine-sepia.vercel.app',
+  },
+  urbanwear: {
+    github: CONTACT.github,
+    liveDemo: 'https://urbanwear-store-vert.vercel.app/',
+  },
 } as const

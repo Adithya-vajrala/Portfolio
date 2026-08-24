@@ -1,21 +1,89 @@
+import { PROJECT_LINKS } from '@/constants'
 import type {
   Certification,
+  CurrentFocus,
   Education,
+  GalleryProject,
   Internship,
   Project,
+  SkillCategory,
 } from '@/types'
 
-export const SKILLS: string[] = [
-  'Java',
-  'OOPs',
-  'Collections',
-  'JDBC',
-  'SQL',
-  'HTML',
-  'CSS',
-  'JavaScript',
-  'Git',
-  'GitHub',
+export const SKILL_CATEGORIES: SkillCategory[] = [
+  {
+    id: 'languages',
+    title: 'Programming Languages',
+    skills: ['Java', 'JavaScript', 'TypeScript', 'SQL', 'C', 'HTML5', 'CSS3'],
+  },
+  {
+    id: 'backend',
+    title: 'Backend',
+    skills: [
+      'Spring Boot',
+      'Spring Security',
+      'Spring Data JPA',
+      'JWT Authentication',
+      'REST APIs',
+      'Microservices',
+    ],
+  },
+  {
+    id: 'frontend',
+    title: 'Frontend',
+    skills: [
+      'React',
+      'TypeScript',
+      'Vite',
+      'Tailwind CSS',
+      'React Router',
+      'Context API',
+    ],
+  },
+  {
+    id: 'database',
+    title: 'Database',
+    skills: ['MySQL', 'PostgreSQL', 'JDBC', 'Database Design'],
+  },
+  {
+    id: 'tools',
+    title: 'Tools',
+    skills: ['Git', 'GitHub', 'Maven', 'IntelliJ IDEA', 'Postman'],
+  },
+  {
+    id: 'concepts',
+    title: 'Core Concepts',
+    skills: [
+      'OOP',
+      'Collections',
+      'Exception Handling',
+      'Data Structures',
+      'Algorithms',
+      'SDLC',
+    ],
+  },
+]
+
+export const CURRENT_FOCUS: CurrentFocus[] = [
+  {
+    title: 'Java Backend',
+    description:
+      'Deepening Java fundamentals, OOP design, and solid backend engineering.',
+  },
+  {
+    title: 'Spring Boot Microservices',
+    description:
+      'Building scalable services with API Gateway, Eureka, and JWT security.',
+  },
+  {
+    title: 'React + TypeScript',
+    description:
+      'Crafting fast, type-safe interfaces with modern React patterns.',
+  },
+  {
+    title: 'System Design',
+    description:
+      'Learning to architect systems that scale, stay reliable, and stay maintainable.',
+  },
 ]
 
 export const PROJECTS: Project[] = [
@@ -37,6 +105,43 @@ export const PROJECTS: Project[] = [
       'Designed and developed a responsive personal portfolio website using HTML and CSS with modern UI design and interactive hover effects.',
     tech: ['HTML', 'CSS'],
   },
+]
+
+export const PROJECTS_GALLERY: GalleryProject[] = [
+  {
+    id: 'skillbridge',
+    title: 'SkillBridge',
+    description:
+      'A microservices platform connecting customers with professionals — JWT-secured services, Eureka discovery, and gateway routing.',
+    anchor: '#featured-project',
+    statusLabel: 'Featured',
+    statusTone: 'brand',
+    categories: ['featured', 'backend', 'fullstack', 'in-progress'],
+    tech: [
+      'Java',
+      'Spring Boot',
+      'Spring Security',
+      'JWT',
+      'Spring Cloud Gateway',
+      'Eureka',
+    ],
+    github: PROJECT_LINKS.skillbridge.github,
+    liveDemo: PROJECT_LINKS.skillbridge.liveDemo,
+  },
+  {
+    id: 'urbanwear',
+    title: 'UrbanWear',
+    description:
+      'A responsive e-commerce storefront built with React, TypeScript, React Router, and Context API.',
+    anchor: '#urbanwear',
+    statusLabel: 'Completed',
+    statusTone: 'emerald',
+    categories: ['frontend', 'completed'],
+    tech: ['React', 'TypeScript', 'Vite', 'Tailwind CSS', 'React Router'],
+    github: PROJECT_LINKS.urbanwear.github,
+    liveDemo: PROJECT_LINKS.urbanwear.liveDemo,
+  },
+
 ]
 
 export const INTERNSHIPS: Internship[] = [
