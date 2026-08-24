@@ -19,20 +19,24 @@ interface DiagramNode {
 }
 
 const NODES: DiagramNode[] = [
-  { Icon: FiMonitor, title: 'Client' },
-  { Icon: FiShield, title: 'API Gateway', subtitle: 'Spring Cloud Gateway' },
-  {
-    Icon: FiKey,
-    title: 'Authentication Service',
-    subtitle: 'JWT · Spring Security',
-    accent: true,
-  },
+  { Icon: FiMonitor, title: 'React Frontend', subtitle: 'React · TypeScript · Vite' },
+  { Icon: FiShield, title: 'API Gateway', subtitle: 'Spring Cloud Gateway · JWT Validation' },
+  { Icon: FiKey, title: 'Auth Service', subtitle: 'JWT · BCrypt · RBAC', accent: true },
   {
     Icon: FiServer,
-    title: 'Other Microservices',
-    subtitle: 'Professional · Booking · Notification · AI',
+    title: 'Microservices',
+    subtitle: 'Customer · Professional · Booking · Payment · Notification',
   },
-  { Icon: FiDatabase, title: 'Database', subtitle: 'MySQL' },
+  { Icon: FiDatabase, title: 'Databases', subtitle: '6 Independent MySQL Databases' },
+]
+
+const SERVICES_LIST = [
+  'Auth',
+  'Customer',
+  'Professional',
+  'Booking',
+  'Payment',
+  'Notification',
 ]
 
 export default function ArchitectureDiagram() {
@@ -63,7 +67,7 @@ export default function ArchitectureDiagram() {
 
             {index < NODES.length - 1 && (
               <div className="flex flex-col items-center">
-                {index === 3 && (
+                {index === 1 && (
                   <span className="mb-1.5 inline-flex items-center gap-1.5 rounded-full border border-brand/30 bg-brand/10 px-3 py-1 text-xs font-semibold text-white">
                     <FiShare2 size={12} className="text-brand" />
                     Eureka Service Discovery
@@ -77,6 +81,18 @@ export default function ArchitectureDiagram() {
               </div>
             )}
           </Fragment>
+        ))}
+      </div>
+
+      {/* Service list */}
+      <div className="mt-5 flex flex-wrap justify-center gap-2">
+        {SERVICES_LIST.map((service) => (
+          <span
+            key={service}
+            className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-medium text-slate-300"
+          >
+            {service}
+          </span>
         ))}
       </div>
     </div>
