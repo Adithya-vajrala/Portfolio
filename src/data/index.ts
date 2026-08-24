@@ -126,6 +126,7 @@ export const PROJECTS_GALLERY: GalleryProject[] = [
       'Eureka',
     ],
     github: PROJECT_LINKS.skillbridge.github,
+    liveDemo: PROJECT_LINKS.skillbridge.liveDemo,
   },
   {
     id: 'urbanwear',
@@ -140,18 +141,7 @@ export const PROJECTS_GALLERY: GalleryProject[] = [
     github: PROJECT_LINKS.urbanwear.github,
     liveDemo: PROJECT_LINKS.urbanwear.liveDemo,
   },
-  {
-    id: 'chappal-shop',
-    title: 'Chappal Shop',
-    description:
-      'A management system for a footwear shop — inventory, billing, exchanges, stock, reports, and sales. Under active development.',
-    anchor: '#chappal-shop',
-    statusLabel: 'In Development',
-    statusTone: 'amber',
-    categories: ['fullstack', 'in-progress'],
-    tech: ['Java', 'Spring Boot', 'React', 'MySQL'],
-    github: PROJECT_LINKS.chappalShop.github,
-  },
+
 ]
 
 export const INTERNSHIPS: Internship[] = [

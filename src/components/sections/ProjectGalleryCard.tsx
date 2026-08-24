@@ -8,7 +8,6 @@ import {
   FiServer,
   FiShoppingBag,
   FiStar,
-  FiTool,
 } from 'react-icons/fi'
 
 import StatusBadge from '@/components/ui/StatusBadge'
@@ -18,13 +17,11 @@ import { cn } from '@/utils'
 const PLACEHOLDER_ICONS: Record<string, IconType> = {
   skillbridge: FiServer,
   urbanwear: FiShoppingBag,
-  'chappal-shop': FiTool,
 }
 
 const PLACEHOLDER_GRADIENTS: Record<string, string> = {
   skillbridge: 'from-brand/40 via-sky-500/20 to-transparent',
   urbanwear: 'from-sky-500/40 via-cyan-400/20 to-transparent',
-  'chappal-shop': 'from-amber-400/40 via-orange-500/20 to-transparent',
 }
 
 const DOT_GRID = {

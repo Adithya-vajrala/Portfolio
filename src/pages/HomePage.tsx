@@ -14,9 +14,7 @@ const FeaturedProjectSection = lazy(
 const UrbanWearCaseStudySection = lazy(
   () => import('@/components/sections/UrbanWearCaseStudySection'),
 )
-const ChappalShopCaseStudySection = lazy(
-  () => import('@/components/sections/ChappalShopCaseStudySection'),
-)
+
 const ContactSection = lazy(() => import('@/components/sections/ContactSection'))
 
 export default function HomePage() {
@@ -29,7 +27,7 @@ export default function HomePage() {
         <ProjectsGallerySection />
         <FeaturedProjectSection />
         <UrbanWearCaseStudySection />
-        <ChappalShopCaseStudySection />
+
         <ContactSection />
       </Suspense>
     </>

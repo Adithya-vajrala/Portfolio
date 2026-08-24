@@ -6,6 +6,7 @@ import {
   FiCheckCircle,
   FiClock,
   FiCpu,
+  FiExternalLink,
   FiGithub,
   FiLayers,
   FiMap,
@@ -166,13 +167,22 @@ export default function FeaturedProjectSection() {
         className="mt-8 flex flex-wrap items-center gap-4"
       >
         <a
-          href={CONTACT.github}
+          href="https://skill-bridge-nine-sepia.vercel.app"
           target="_blank"
           rel="noreferrer"
           className="group inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-brand to-sky-500 px-6 py-3 text-sm font-semibold text-ink shadow-lg shadow-brand/30 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-brand/40 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand"
         >
-          <FiGithub size={16} />
-          GitHub Repository
+          <FiExternalLink size={16} />
+          Live Demo
+        </a>
+        <a
+          href={CONTACT.github}
+          target="_blank"
+          rel="noreferrer"
+          className="group inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-6 py-3 text-sm font-semibold text-white backdrop-blur transition-all duration-300 hover:-translate-y-0.5 hover:border-brand/60 hover:bg-white/10 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand"
+        >
+          <FiGithub size={16} className="text-brand" />
+          GitHub
         </a>
         <a
           href="#skillbridge-architecture"

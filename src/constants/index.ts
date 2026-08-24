@@ -37,12 +37,10 @@ export const CONTACT = {
 export const PROJECT_LINKS = {
   skillbridge: {
     github: CONTACT.github,
+    liveDemo: 'https://skill-bridge-nine-sepia.vercel.app',
   },
   urbanwear: {
     github: CONTACT.github,
     liveDemo: 'https://urbanwear-store-vert.vercel.app/',
-  },
-  chappalShop: {
-    github: CONTACT.github,
   },
 } as const

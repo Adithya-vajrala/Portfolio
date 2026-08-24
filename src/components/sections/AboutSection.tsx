@@ -22,11 +22,10 @@ const ABOUT_PARAGRAPHS = [
     'backends as microservices. On the frontend I build responsive ' +
     'interfaces with React and TypeScript, backed by SQL databases I design ' +
     'and model myself.',
-  "Right now I'm building the SkillBridge microservices platform and a " +
-    'Chappal Shop Management System — projects where I apply real ' +
-    'architecture decisions end to end. I\'m drawn to scalable backend ' +
-    'systems, and I\'m looking for a team where I can grow as a software ' +
-    'engineer.',
+  "Right now I'm building the SkillBridge microservices platform — " +
+    'a project where I apply real architecture decisions end to end. ' +
+    "I'm drawn to scalable backend systems, and I'm looking for a team " +
+    'where I can grow as a software engineer.'
 ]
 
 interface HighlightCard {
